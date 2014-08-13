@@ -1,0 +1,26 @@
+#+title: test-bed for testing apps with atom-shell
+#+author: hunter hutchinson
+#+date: <2014-08-13 Wed>
+
+* Purpose
+  A test bed for exploring atom-shell as replacement for phantomjs for unit testing, scraping and other headless activities.
+
+* to run
+
+** do you have grunt?
+   #+BEGIN_SRC sh
+     npm install -g grunt-cli
+   #+END_SRC
+
+** install atom-shell
+   #+BEGIN_SRC sh
+     cd ./build
+     npm install
+     grunt download-atom-shell
+   #+END_SRC
+
+** now you can run
+   example for MacOS
+   #+BEGIN_SRC sh
+     ./build/atom-shell/Atom.app/Contents/MacOS/Atom ./hello-app
+   #+END_SRC
