@@ -11,8 +11,7 @@ app.on('ready', function() {
     mainWindow = new BrowserWindow({show: false});
     mainWindow.loadUrl('http://www.phantomjs.org/');
     mainWindow.webContents.on('did-finish-load', function() {
-        // window.webContents.send('ping', 'whoooooooh!');
-        console.log("yahtzee!");
+        console.log("loaded page title: ", mainWindow.webContents.getTitle());
         app.quit();
     });
 });

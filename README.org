@@ -22,5 +22,39 @@
 ** now you can run
    example for MacOS
    #+BEGIN_SRC sh
-     ./build/atom-shell/Atom.app/Contents/MacOS/Atom ./hello-app
+     ./build/atom-shell/Atom.app/Contents/MacOS/Atom ./test-app
+   #+END_SRC
+
+* to run headless on linux
+
+** do you have grunt?
+   #+BEGIN_SRC sh
+     npm install -g grunt-cli
+   #+END_SRC
+
+** do you have XVFB (X Virtual Framebuffer)
+
+*** on ubuntu/debian based systems
+    #+BEGIN_SRC sh
+      sudo apt-get install xvfb
+    #+END_SRC
+** install atom-shell
+   #+BEGIN_SRC sh
+     cd ./build
+     npm install
+     grunt download-atom-shell
+   #+END_SRC
+** permissions might not be right
+   set executable yourself
+   #+BEGIN_SRC sh
+     chmod +x ./build/atom-shell/atom
+   #+END_SRC
+** setup xvfb
+   #+BEGIN_SRC sh
+     export DISPLAY=:10
+     Xvfb :10 -screen 0 1366x768x24 -ac &
+   #+END_SRC
+** now you atom-shell can run as normal
+   #+BEGIN_SRC sh
+     ./build/atom-shell/atom ./test-app
    #+END_SRC
