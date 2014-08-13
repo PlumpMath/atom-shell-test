@@ -54,7 +54,7 @@
      export DISPLAY=:10
      Xvfb :10 -screen 0 1366x768x24 -ac &
    #+END_SRC
-** now you atom-shell can run as normal
+** now your atom-shell can run as normal
    #+BEGIN_SRC sh
      ./build/atom-shell/atom ./test-app
    #+END_SRC
